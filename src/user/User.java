@@ -65,7 +65,8 @@ public class User {
     }
 
     //метод запроса актуальной цены из БД
-    public void actualPriceForCrypto(DaoCryptoCrud daoCryptoCrud, int id) throws SQLException {
+    public void actualPriceForCrypto(int id) throws SQLException {
+        DaoCryptoCrud daoCryptoCrud = new DaoCryptoCrud();
         Crypto crypto = daoCryptoCrud.getById(id);
         System.out.println("Actual price for " + crypto.getName() + ":" + crypto.getPrice_usd());
     }
